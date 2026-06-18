@@ -178,6 +178,9 @@
   }
 
   @media (max-width:639px){
+    .float-wa{
+      display:none;
+    }
     .nav-links, .nav-cta{
       display:none;
     }
@@ -732,10 +735,10 @@
 
   .float-wa{
     position:fixed;
-    bottom:22px;
-    left:22px;
-    width:56px;
-    height:56px;
+    bottom:16px;
+    left:16px;
+    width:48px;
+    height:48px;
     border-radius:50%;
     background:linear-gradient(180deg, var(--gold-light), var(--gold));
     display:flex;
