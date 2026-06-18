@@ -179,7 +179,7 @@
 
   @media (max-width:639px){
     .float-wa{
-      display:none;
+      display:none !important;
     }
     .nav-links, .nav-cta{
       display:none;
