@@ -733,7 +733,7 @@
   .float-wa{
     position:fixed;
     bottom:22px;
-    right:22px;
+    left:22px;
     width:56px;
     height:56px;
     border-radius:50%;
