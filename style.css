@@ -250,8 +250,42 @@
 
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:28px;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+
+  @media (min-width:640px){
+    .grid{
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+  }
+
+  @media (max-width:639px){
+    .card-body{
+      padding:16px 14px 16px;
+    }
+    .card h3{
+      font-size:17px;
+    }
+    .price{
+      font-size:16px;
+    }
+    .badges{
+      gap:6px;
+    }
+    .badge{
+      font-size:10px;
+      padding:3px 8px;
+    }
+    .desc{
+      font-size:13px;
+      min-height:auto;
+    }
+    .order{
+      font-size:12px;
+      padding:9px 16px;
+    }
   }
 
   .card{
