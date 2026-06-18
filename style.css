@@ -260,6 +260,9 @@
     border-radius:16px;
     overflow:hidden;
     text-align:center;
+    display:flex;
+    flex-direction:column;
+    height:100%;
     transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   }
 
@@ -273,6 +276,7 @@
     position:relative;
     overflow:hidden;
     aspect-ratio:4/5;
+    flex-shrink:0;
   }
 
   .card-img img{
@@ -287,7 +291,10 @@
   }
 
   .card-body{
-    padding:22px 18px 26px;
+    padding:22px 18px 22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
   }
 
   .card h3{
@@ -299,12 +306,11 @@
   }
 
   .price{
-    margin-top:8px;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--cream-dim);
+    margin-top:10px;
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:0.01em;
+    color:var(--gold-light);
   }
 
   .desc{
@@ -317,13 +323,15 @@
   }
 
   .order{
-    display:inline-block;
-    margin-top:16px;
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    margin-top:auto;
     background:transparent;
     border:1px solid var(--gold);
     color:var(--gold-light);
     text-decoration:none;
-    padding:10px 22px;
+    padding:11px 22px;
     border-radius:999px;
     font-weight:600;
     font-size:13px;
@@ -720,6 +728,34 @@
     color:var(--gold-light);
     border-bottom:1px solid var(--gold);
     padding-bottom:2px;
+  }
+
+  /* ---------- about / story ---------- */
+
+  .story{
+    max-width:640px;
+    margin:0 auto;
+    padding:90px 24px 70px;
+    text-align:center;
+  }
+
+  .story blockquote{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:clamp(19px,2.6vw,24px);
+    color:var(--gold-light);
+    margin:28px 0;
+    line-height:1.5;
+  }
+
+  .story p{
+    font-size:15px;
+    color:var(--cream-dim);
+    margin-top:18px;
+  }
+
+  .story-cta{
+    margin-top:32px;
   }
 
   /* ---------- page banner (sous-pages) ---------- */
