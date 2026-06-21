@@ -23,7 +23,7 @@
     scroll-behavior:smooth;
   }
 
-  #parfums, #huiles, #avis, #livraison, #offres{
+  #parfums, #huiles, #avis, #livraison, #offres, #faq{
     scroll-margin-top:72px;
   }
 
@@ -337,30 +337,31 @@
 
   @media (max-width:639px){
     .gallery .card-img{
-      aspect-ratio:1/1;
+      aspect-ratio:4/3;
     }
     .gallery .card-body{
-      padding:14px 12px 14px;
+      padding:10px 8px 10px;
     }
     .gallery .card h3{
-      font-size:15px;
+      font-size:13px;
     }
     .gallery .price{
-      font-size:14px;
-      margin-top:6px;
+      font-size:12px;
+      margin-top:4px;
     }
     .gallery .badges{
       display:none;
     }
     .gallery .desc{
-      font-size:12px;
-      margin-top:8px;
+      font-size:10.5px;
+      margin-top:5px;
       min-height:auto;
+      line-height:1.4;
     }
     .gallery .order{
-      font-size:11.5px;
-      padding:8px 14px;
-      margin-top:12px;
+      font-size:10.5px;
+      padding:6px 12px;
+      margin-top:8px;
     }
     .gallery{
       padding-left:16px;
@@ -845,6 +846,55 @@
     color:var(--gold-light);
     border-bottom:1px solid var(--gold);
     padding-bottom:2px;
+  }
+
+  /* ---------- FAQ ---------- */
+
+  section.faq{
+    max-width:720px;
+    margin:0 auto;
+    padding:90px 24px 100px;
+  }
+
+  .faq-item{
+    border-bottom:1px solid var(--card-border);
+    padding:18px 0;
+  }
+
+  .faq-item summary{
+    cursor:pointer;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:16px;
+    color:var(--gold-light);
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+
+  .faq-item summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .faq-item summary::after{
+    content:"+";
+    font-size:22px;
+    color:var(--gold);
+    flex-shrink:0;
+    transition:transform .2s ease;
+  }
+
+  .faq-item[open] summary::after{
+    transform:rotate(45deg);
+  }
+
+  .faq-item p{
+    margin-top:12px;
+    font-size:14px;
+    color:var(--cream-dim);
+    line-height:1.6;
   }
 
   /* ---------- about / story ---------- */
