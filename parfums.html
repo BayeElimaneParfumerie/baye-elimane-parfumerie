@@ -65,13 +65,13 @@
 <div class="page-banner">
   <span class="eyebrow">Collection signature</span>
   <h1 class="section-title">Nos Parfums</h1>
-  <p>Des eaux de parfum orientales, 100 ml, pensées pour marquer les esprits.</p>
+  <p>6 eaux de parfum orientales, 100 ml, pensées pour marquer les esprits.</p>
   <div class="breadcrumb"><a href="index.html">Accueil</a> · Parfums</div>
 </div>
 
 <section class="gallery" id="parfums">
 
-  <div class="grid">
+  <div class="grid" id="productGrid">
 
     <div class="card">
       <div class="card-img"><span class="bestseller-badge">★ Bestseller</span><img loading="lazy" src="images/khamrah.jpg" alt="KHAMRAH"></div>
@@ -139,7 +139,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><span class="bestseller-badge">★ Bestseller</span><img loading="lazy" src="images/oud-al-malik.jpg" alt="OUD AL MALIK"></div>
       <div class="card-body">
         <h3>OUD AL MALIK</h3>
@@ -150,7 +150,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><img loading="lazy" src="images/eclaire.jpg" alt="ECLAIRE"></div>
       <div class="card-body">
         <h3>ECLAIRE</h3>
@@ -160,8 +160,8 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/intense-wayefarer.jpg" alt="INTENSE WAYFARER"></div>
+    <div class="card extra">
+      <div class="card-img"><img loading="lazy" src="images/intense-wayfarer.jpg" alt="INTENSE WAYFARER"></div>
       <div class="card-body">
         <h3>INTENSE WAYFARER</h3>
         <div class="price">Prix sur demande</div>
@@ -170,7 +170,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><img loading="lazy" src="images/rifaaqat.jpg" alt="RIFAAQAT"></div>
       <div class="card-body">
         <h3>RIFAAQAT</h3>
@@ -180,8 +180,8 @@
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/sauvage.jpeg" alt="SAUVAGE DIOR"></div>
+    <div class="card extra">
+      <div class="card-img"><img loading="lazy" src="images/sauvage-dior-edp.jpg" alt="SAUVAGE DIOR"></div>
       <div class="card-body">
         <h3>SAUVAGE DIOR</h3>
         <div class="price">Prix sur demande</div>
@@ -190,7 +190,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><img loading="lazy" src="images/saphir.jpg" alt="SAPHIR"></div>
       <div class="card-body">
         <h3>SAPHIR</h3>
@@ -200,7 +200,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><img loading="lazy" src="images/mousuf.jpeg" alt="MOUSUF"></div>
       <div class="card-body">
         <h3>MOUSUF</h3>
@@ -210,7 +210,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card extra">
       <div class="card-img"><img loading="lazy" src="images/acqua-di-parma.jpg" alt="ACQUA DI PARMA"></div>
       <div class="card-body">
         <h3>ACQUA DI PARMA</h3>
@@ -220,6 +220,11 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="see-more-wrap">
+    <button class="see-more-btn" id="seeMoreBtn">Voir plus de parfums ↓</button>
+    <button class="see-more-btn is-hidden" id="seeLessBtn">Voir moins ↑</button>
   </div>
 
 </section>
@@ -248,6 +253,25 @@ menu.querySelectorAll('a').forEach(a => {
     menu.classList.remove('open');
   });
 });
+
+const seeMoreBtn = document.getElementById('seeMoreBtn');
+const seeLessBtn = document.getElementById('seeLessBtn');
+const productGrid = document.getElementById('productGrid');
+if (seeMoreBtn && productGrid) {
+  seeMoreBtn.addEventListener('click', () => {
+    productGrid.classList.add('expanded');
+    seeMoreBtn.classList.add('is-hidden');
+    seeLessBtn.classList.remove('is-hidden');
+  });
+}
+if (seeLessBtn && productGrid) {
+  seeLessBtn.addEventListener('click', () => {
+    productGrid.classList.remove('expanded');
+    seeLessBtn.classList.add('is-hidden');
+    seeMoreBtn.classList.remove('is-hidden');
+    productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 </script>
 </body>
 </html>
