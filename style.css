@@ -51,6 +51,122 @@
     outline-offset:3px;
   }
 
+  /* ---------- scroll reveal ---------- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+
+  .reveal.visible{
+    opacity:1;
+    transform:none;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{
+      opacity:1;
+      transform:none;
+      transition:none;
+    }
+  }
+
+  /* ---------- stats band ---------- */
+
+  .stats-band{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 24px;
+    text-align:center;
+    border-bottom:1px solid var(--card-border);
+  }
+
+  .stat-num{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(26px,3.4vw,34px);
+    color:var(--gold-light);
+  }
+
+  .stat-label{
+    margin-top:6px;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+  }
+
+  /* ---------- gold dust particles ---------- */
+
+  .dust{
+    position:absolute;
+    border-radius:50%;
+    background:var(--gold-light);
+    opacity:0;
+    animation:dust-float 8s ease-in infinite;
+  }
+
+  @keyframes dust-float{
+    0%{ opacity:0; transform:translateY(0) scale(0.8); }
+    15%{ opacity:0.8; }
+    80%{ opacity:0.4; }
+    100%{ opacity:0; transform:translateY(-220px) scale(1.1); }
+  }
+
+  .scroll-cue{
+    position:relative;
+    z-index:1;
+    margin-top:46px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    color:var(--cream-dim);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .dust{ animation:none; opacity:0; }
+    .scroll-cue{ animation:none; }
+  }
+
+  /* ---------- closing CTA banner ---------- */
+
+  .closing-cta{
+    text-align:center;
+    padding:90px 24px;
+    background:radial-gradient(ellipse 700px 300px at 50% 0%, rgba(201,162,39,0.12), transparent 70%), var(--ink-soft);
+    border-top:1px solid var(--card-border);
+  }
+
+  .closing-cta h2{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(24px,3.6vw,32px);
+    color:var(--cream);
+  }
+
+  .closing-cta p{
+    margin-top:12px;
+    color:var(--cream-dim);
+    font-size:15px;
+  }
+
+  .closing-cta .btn-cta{
+    margin-top:26px;
+  }
+
   /* ---------- navbar ---------- */
 
   nav.navbar{
