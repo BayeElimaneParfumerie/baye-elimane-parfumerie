@@ -101,11 +101,42 @@
     <p class="slogan">L'élégance dans chaque fragrance</p>
     <p class="hero-sub">🌹 Des senteurs qui marquent les esprits</p>
     <a class="btn-cta" href="https://wa.me/221774712615">📱 Commander sur WhatsApp</a>
+
+    <div class="scroll-cue">
+      <span>Découvrir</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+
   </div>
+
+  <span class="dust" style="width:4px;height:4px;left:20%;bottom:10%;animation-delay:0s;"></span>
+  <span class="dust" style="width:3px;height:3px;left:35%;bottom:5%;animation-delay:1.5s;"></span>
+  <span class="dust" style="width:5px;height:5px;left:55%;bottom:15%;animation-delay:3s;"></span>
+  <span class="dust" style="width:3px;height:3px;left:70%;bottom:8%;animation-delay:4.5s;"></span>
+  <span class="dust" style="width:4px;height:4px;left:85%;bottom:12%;animation-delay:2s;"></span>
 
 </header>
 
-<section class="categories">
+<div class="stats-band reveal">
+  <div>
+    <div class="stat-num">3</div>
+    <div class="stat-label">Collections</div>
+  </div>
+  <div>
+    <div class="stat-num">30+</div>
+    <div class="stat-label">Références</div>
+  </div>
+  <div>
+    <div class="stat-num">2</div>
+    <div class="stat-label">Villes desservies</div>
+  </div>
+  <div>
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Commande sur WhatsApp</div>
+  </div>
+</div>
+
+<section class="categories reveal">
 
   <div class="section-head">
     <span class="eyebrow">Notre univers</span>
@@ -130,7 +161,7 @@
       <div class="tile-overlay">
         <span class="eyebrow">Format poche · 5 ml</span>
         <h3>Huiles Parfumées</h3>
-        <p>Des senteurs concentrées et économiques, à 1 500 FCFA l'unité.</p>
+        <p>8 senteurs concentrées et économiques, à 1 500 FCFA l'unité.</p>
         <span class="tile-link">Découvrir la collection →</span>
       </div>
     </a>
@@ -149,7 +180,7 @@
 
 </section>
 
-<section class="offers" id="offres">
+<section class="offers reveal" id="offres">
 
   <div class="section-head">
     <span class="eyebrow">À ne pas manquer</span>
@@ -179,7 +210,7 @@
 
 </section>
 
-<section class="why">
+<section class="why reveal">
 
   <div class="section-head">
     <span class="eyebrow">Notre engagement</span>
@@ -211,7 +242,7 @@
 
 </section>
 
-<section class="testimonials" id="avis">
+<section class="testimonials reveal" id="avis">
 
   <div class="section-head">
     <span class="eyebrow">Ils nous font confiance</span>
@@ -243,7 +274,7 @@
 
 </section>
 
-<section class="info" id="livraison">
+<section class="info reveal" id="livraison">
 
   <div class="section-head">
     <span class="eyebrow">Bon à savoir</span>
@@ -269,7 +300,7 @@
 
 </section>
 
-<section class="faq" id="faq">
+<section class="faq reveal" id="faq">
 
   <div class="section-head">
     <span class="eyebrow">Vous vous demandez</span>
@@ -309,6 +340,12 @@
 
 </section>
 
+<section class="closing-cta reveal">
+  <h2>Prêt à trouver votre signature ?</h2>
+  <p>Parcourez nos collections et commandez en quelques secondes sur WhatsApp.</p>
+  <a class="btn-cta" href="https://wa.me/221774712615">📱 Commander maintenant</a>
+</section>
+
 <footer>
   <div class="footer-logo">Baye Elimane Parfumerie</div>
   <p>📍 Dakar & Bambey</p>
@@ -333,6 +370,16 @@ menu.querySelectorAll('a').forEach(a => {
     menu.classList.remove('open');
   });
 });
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
