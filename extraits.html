@@ -25,6 +25,7 @@
     <a class="nav-link" href="parfums.html">Parfums</a>
     <a class="nav-link" href="huiles.html">Huiles</a>
     <a class="nav-link" href="extraits.html">Extraits</a>
+    <a class="nav-link" href="thiouraye.html">Thiouraye</a>
     <a class="nav-link" href="index.html#offres">Offres</a>
     <a class="nav-link" href="index.html#faq">FAQ</a>
     <a class="nav-link" href="index.html#avis">Avis</a>
@@ -42,6 +43,7 @@
   <a href="parfums.html">Parfums</a>
   <a href="huiles.html">Huiles</a>
   <a href="extraits.html">Extraits</a>
+  <a href="thiouraye.html">Thiouraye</a>
   <a href="index.html#offres">Offres</a>
   <a href="index.html#faq">FAQ</a>
   <a href="index.html#avis">Avis</a>
@@ -61,7 +63,7 @@
   <div class="grid">
 
     <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/extrait3.jpeg" alt="Club de Nuit"></div>
+      <div class="card-img"><button class="fav-btn" aria-label="Ajouter aux favoris">♡</button><img loading="lazy" src="images/club-de-nuit.jpg" alt="Club de Nuit"></div>
       <div class="card-body">
         <h3>Club de Nuit</h3>
         <div class="price">3 500 FCFA</div>
@@ -71,7 +73,7 @@
     </div>
 
     <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/extrait4.jpeg" alt="L'Impératrice"></div>
+      <div class="card-img"><button class="fav-btn" aria-label="Ajouter aux favoris">♡</button><img loading="lazy" src="images/imperatrice.jpg" alt="L'Impératrice"></div>
       <div class="card-body">
         <h3>L'Impératrice</h3>
         <div class="price">3 500 FCFA</div>
@@ -81,7 +83,7 @@
     </div>
 
     <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/extrait1.jpeg" alt="Instant Crush"></div>
+      <div class="card-img"><button class="fav-btn" aria-label="Ajouter aux favoris">♡</button><img loading="lazy" src="images/instant-crush.jpg" alt="Instant Crush"></div>
       <div class="card-body">
         <h3>Instant Crush</h3>
         <div class="price">3 500 FCFA</div>
@@ -91,7 +93,7 @@
     </div>
 
     <div class="card">
-      <div class="card-img"><img loading="lazy" src="images/extrait2.jpeg" alt="Ameerat Al Arab"></div>
+      <div class="card-img"><button class="fav-btn" aria-label="Ajouter aux favoris">♡</button><img loading="lazy" src="images/ameerat-al-arab.jpg" alt="Ameerat Al Arab"></div>
       <div class="card-body">
         <h3>Ameerat Al Arab</h3>
         <div class="price">3 500 FCFA</div>
@@ -109,10 +111,10 @@
   </div>
 
   <div class="shelf-gallery">
-    <img loading="lazy" src="images/extrait5.jpeg" alt="Étagère d'extraits de parfum">
-    <img loading="lazy" src="images/extrait6.jpeg" alt="Étagère d'extraits de parfum">
-    <img loading="lazy" src="images/extrait7.jpeg" alt="Étagère d'extraits de parfum">
-    <img loading="lazy" src="images/extrait8.jpeg" alt="Étagère d'extraits de parfum">
+    <img loading="lazy" src="images/etagere1.jpg" alt="Étagère d'extraits de parfum">
+    <img loading="lazy" src="images/etagere2.jpg" alt="Étagère d'extraits de parfum">
+    <img loading="lazy" src="images/etagere3.jpg" alt="Étagère d'extraits de parfum">
+    <img loading="lazy" src="images/etagere4.jpg" alt="Étagère d'extraits de parfum">
   </div>
 
   <div class="other-refs">
@@ -128,6 +130,17 @@
   <a class="btn-cta" href="https://wa.me/221774712615">📱 WhatsApp : 77 471 26 15</a>
   <p class="copyright">© 2026 Baye Elimane Parfumerie. Tous droits réservés.</p>
 </footer>
+
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalName"></h3>
+    <div class="price" id="modalPrice"></div>
+    <div class="desc" id="modalDesc"></div>
+    <a class="btn-cta" id="modalOrder" href="https://wa.me/221774712615">📱 Commander sur WhatsApp</a>
+  </div>
+</div>
 
 <a class="float-wa" href="https://wa.me/221774712615" aria-label="Commander sur WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.8.8 5.4 2.2 7.6L2 30l6.6-2.2C10.7 29.2 13.3 30 16 30c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.4 0-4.6-.7-6.5-1.9l-.5-.3-3.9 1.3 1.3-3.8-.3-.5C4.7 20.4 4 18.3 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.6-8.6c-.4-.2-2.1-1-2.4-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.2 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.5-.6c.2-.2.2-.4.1-.6-.1-.2-.7-1.7-1-2.3-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.7.4-.2.3-.9 1-.9 2.3 0 1.3 1 2.6 1.1 2.8.1.2 1.8 2.8 4.5 3.9 2.7 1.1 2.7.7 3.2.7.5 0 1.6-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
@@ -146,6 +159,81 @@ menu.querySelectorAll('a').forEach(a => {
     menu.classList.remove('open');
   });
 });
+
+
+// --- Favoris ---
+const FAV_KEY = 'baye-elimane-favorites';
+function getFavorites() {
+  try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; }
+  catch { return []; }
+}
+function saveFavorites(list) {
+  localStorage.setItem(FAV_KEY, JSON.stringify(list));
+}
+function slugify(text) {
+  return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+}
+
+document.querySelectorAll('.card').forEach(card => {
+  const nameEl = card.querySelector('h3');
+  const id = nameEl ? slugify(nameEl.textContent) : Math.random().toString(36);
+  const favBtn = card.querySelector('.fav-btn');
+  if (favBtn) {
+    favBtn.dataset.id = id;
+    if (getFavorites().includes(id)) {
+      favBtn.classList.add('active');
+      favBtn.textContent = '♥';
+    }
+    favBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      let favs = getFavorites();
+      if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        favBtn.classList.remove('active');
+        favBtn.textContent = '♡';
+      } else {
+        favs.push(id);
+        favBtn.classList.add('active');
+        favBtn.textContent = '♥';
+      }
+      saveFavorites(favs);
+    });
+  }
+});
+
+// --- Fiche produit (modal) ---
+const productModal = document.getElementById('productModal');
+const modalImg = document.getElementById('modalImg');
+const modalName = document.getElementById('modalName');
+const modalPrice = document.getElementById('modalPrice');
+const modalDesc = document.getElementById('modalDesc');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('.order') || e.target.closest('.fav-btn')) return;
+    const img = card.querySelector('img');
+    const name = card.querySelector('h3');
+    const price = card.querySelector('.price');
+    const desc = card.querySelector('.desc');
+    if (img) { modalImg.src = img.src; modalImg.alt = img.alt; }
+    if (name) modalName.textContent = name.textContent;
+    if (price) modalPrice.textContent = price.textContent;
+    if (desc) modalDesc.textContent = desc.textContent;
+    if (productModal) productModal.classList.add('open');
+  });
+});
+
+function closeModal() {
+  if (productModal) productModal.classList.remove('open');
+}
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (productModal) {
+  productModal.addEventListener('click', (e) => {
+    if (e.target === productModal) closeModal();
+  });
+}
+
 </script>
 </body>
 </html>
