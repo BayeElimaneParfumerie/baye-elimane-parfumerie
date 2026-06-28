@@ -623,7 +623,7 @@
     height:100%;
     object-fit:cover;
     opacity:0;
-    transition:opacity .7s ease;
+    transition:opacity .4s ease;
   }
 
   .hero-slide.is-active{
